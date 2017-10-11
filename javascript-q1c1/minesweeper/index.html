@@ -9,20 +9,28 @@
   
    <script>
 	// *********************************************
-	// **    Code Author:   YOUR_NAME 
-	// **    Date: CURRENT_DATE                        
-	// **    Description: DESCRIPTION
+	// **    Code Author:   Morgan Lang 
+	// **    Date: 10/10/17
+     
+	// **    Description: This script is designed to do the following:
+    // **     A. Prompt the user for their name using the prompt() method 
+    // **     B. capture their name in a variable ("userName") 
+    // **     C. greet them with their own name by invoking userName in an alert() and concatenating it with some string operators.
 	// **    
 	// **********************************************
-	// **       Change Log 
-	// **     10/9/17 – Added header and changelog. Cliff Knopik
+	// **    Change Log 
+	// **     10/09/17 – Added header and changelog. Cliff Knopik
+    // **     10/09/17 - Created html, js, and css. Morgan Lang
+    // **     10/10/17 - Copied in header and changelog, commented. Morgan Lang
 	// **********************************************
 	
 	// Put script here
      
-             var userName=prompt("Welcome to Minesweeper. What is your name?");
-        
-        alert("Hi, " + userName + "." + " " + "Good luck!");
+    // ** Declaring the variable userName and storing the user's name in it using prompt():
+      var userName = prompt("Welcome to Minesweeper. What is your name?");
+     
+    // ** Concatenating the stored user name with some friendly strings in an alert().  
+      var userAlert = alert("Hi, " + userName + "." + " " + "Good luck!");
 	
    </script>
   
@@ -30,9 +38,17 @@
   
 <body>
       
-      <h2>Minesweeper!</h2>
+      <div id="MSTitle">
+        <h2>Minesweeper!</h2>
+      </div>
       
-      <h4>Click on the grid below, and try not to get blown up.</h4>
+      <div id="MSDirections">
+        <h4>Click on the grid below, and try not to get blown up.</h4>
+      </div>
+  
+      <div id="MSGame">
+        <!--Assuming it will be helpful to put the game in a div eventually.-->
+      </div>
   
 </body>
 </html>
