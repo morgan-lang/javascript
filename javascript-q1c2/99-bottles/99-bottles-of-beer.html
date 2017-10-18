@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+   <meta charset="utf-8">
+   <title>99 Bottles of Beer</title>
+  
+   <link rel="stylesheet" type="text/css" href="beer.css"> 
+  
+
+	
+
+  
+</head>
+  
+<body>
+  
+    <script>
+
+var count = prompt("How many bottles of beer are there on the wall?");
+var word = "bottles";
+while (count > 0) {
+
+document.write("<br>" + count + " " + word + " of beer on the wall,");
+document.write("<br>" + count + " " + word + " of beer.");
+document.write("<br>" + "Take one down, pass it around,");
+count = (count - 1);
+  
+}
+      
+
+if (count !=0) {document.write("<br>" + count + " " + word + " of beer on the wall.");
+                
+               }  
+      
+
+
+else {
+
+document.write("<br>" + "No more " + word + " of beer on the wall.");
+
+
+
+}
+    
+    
+    </script>
+      
+
+  
+</body>
+</html>
+

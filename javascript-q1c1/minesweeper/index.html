@@ -22,15 +22,32 @@
 	// **     10/09/17 – Added header and changelog. Cliff Knopik
     // **     10/09/17 - Created html, js, and css. Morgan Lang
     // **     10/10/17 - Copied in header and changelog, commented. Morgan Lang
+    // **     10/17/17 - Added counting loop and conditional. Commented. Morgan Lang
 	// **********************************************
 	
 	// Put script here
+     var countUp = 1
      
     // ** Declaring the variable userName and storing the user's name in it using prompt():
       var userName = prompt("Welcome to Minesweeper. What is your name?");
      
     // ** Concatenating the stored user name with some friendly strings in an alert().  
       var userAlert = alert("Hi, " + userName + "." + " " + "Good luck!");
+     
+    // ** Declaring the variable userNumber and storing the user's number in it using prompt():
+      var userNumber = prompt("Enter w whole number between 1 and 10 indicating how wide you want the Minesweeper grid to be.");
+
+    // ** Creating a loop. Starting at number 1, for every number between 1 and userNumber inclusive, write the string "0" to the document.
+      for (countUp = 1; countUp <= userNumber; countUp ++) {
+        document.write("0");
+     }
+    
+     // ** A conditional. Once the countUp loop reaches the end and matches the value captured in userNumber, report the width of the grid to the user.
+      if (countUp == userNumber); {
+        document.write("<br><br>" + "<h4>This grid is " + userNumber + " units wide.</h4>");
+    }
+     
+
 	
    </script>
   
