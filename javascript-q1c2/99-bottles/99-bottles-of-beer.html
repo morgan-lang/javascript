@@ -14,28 +14,37 @@
 </head>
   
 <body>
+
+<p>
   
     <script>
-
-var count = prompt("How many bottles of beer are there on the wall?");
+//Getting the number of bottles from the user and storing that value as the variable "count":
+var count = prompt("Let's drink some beer! Hey, how many bottles of beer are there on the wall?");
 var word = "bottles";
-while (count > 0) {
+
+//Running the while loop with the condition that it will stop running when the count gets to 1:
+while (count > 1) {
 
 document.write("<br>" + count + " " + word + " of beer on the wall,");
 document.write("<br>" + count + " " + word + " of beer.");
 document.write("<br>" + "Take one down, pass it around,");
+//Decrementing the count value before we start the loop again:
 count = (count - 1);
   
 }
       
-
-if (count !=0) {document.write("<br>" + count + " " + word + " of beer on the wall.");
+//Running a conditional check to make sure that the count is more than 1 so that we can use the plural "bottles," stored earlier as the variable "word":
+if (count !=1) {document.write("<br>" + count + " " + word + " of beer on the wall.");
                 
                }  
       
 
-
+//If the above conditional check fails and the count has dropped to 1 bottle, we need to use a different set of language that isn't plural:
 else {
+
+document.write("<br>" + "1 bottle of beer on the wall.");
+document.write("<br>" + "1 bottle of beer.");
+document.write("<br>" + "Take one down, pass it around,");
 
 document.write("<br>" + "No more " + word + " of beer on the wall.");
 
@@ -47,7 +56,7 @@ document.write("<br>" + "No more " + word + " of beer on the wall.");
     </script>
       
 
-  
+ </p> 
 </body>
 </html>
 

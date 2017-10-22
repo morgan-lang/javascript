@@ -3,7 +3,7 @@
   
 <head>
    <meta charset="utf-8">
-   <title>Counting!</title>
+   <title>Counting by fives is fun!</title>
   
    <link rel="stylesheet" type="text/css" href="counting.css"> 
   
@@ -11,14 +11,16 @@
 
 var countUp = 0
 
-var userNumber = prompt("how high would you like me to count?");
-
-for (countUp = 0; countUp <= userNumber; countUp ++) {
+var userNumber = prompt("Hey there. I love to count by fives. How high would you like me to count? If you give me a number not divisible by 5, I'll round the final number down.");
+//Running a for loop, using the assignment operator "+=" to add 5 to the previous value of countUp, starting at 0:
+for (countUp = 0; countUp <= userNumber; countUp +=5) {
+//Inserting a break for each new line for readability:
      document.write(countUp + "<br>");
 }
-    
-if (countUp == userNumber); {
-    document.write("<br>" + "I'm smart! I \"can\" count to " + userNumber + ".");
+
+//Running a conditional check to determine whether we've reached the limit given by the user:
+if (countUp >= userNumber); {
+    document.write("<br>" + "I'm smart! I can count to " + userNumber + " by fives, rounding down to the nearest number divisible by five.");
     }
     
     
