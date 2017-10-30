@@ -1,0 +1,7 @@
+https://github.com/angular/angular.js
+
+Angular looks quite promising to me. 
+My front-end work has been limited to handcoding, Drupal, Wordpress, and Bootstrap. 
+Angular looks like it's designed to let HTML5 do the driving, respecting HTML5's declarative orientation.
+This makes more sense to me as someone more comfortable with HTML than JS at the moment. 
+I doubt I could be of much use to the project, but I would like to use Angular.

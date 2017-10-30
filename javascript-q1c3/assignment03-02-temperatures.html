@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Assignment 3 - Temperatures</title>
+</head>
+<!--Morgan Lang-->
+<body>
+<script>
+// homework
+var tempsForWeek = [];
+tempsForWeek[0] = [56, 59, 63, 66, 67, 69, 70, 69, 65, 62, 59, 56]; // Monday
+tempsForWeek[1] = [57, 59, 61, 64, 67, 69, 70, 71, 71, 69, 67, 64]; // Tuesday
+tempsForWeek[2] = [58, 60, 62, 64, 66, 68, 69, 70, 70, 69, 62, 57]; // Wednesday
+tempsForWeek[3] = [57, 56, 69, 62, 65, 66, 68, 68, 70, 69, 59, 52]; // Thursday
+tempsForWeek[4] = [52, 59, 59, 63, 67, 70, 72, 73, 77, 74, 70, 65]; // Friday
+tempsForWeek[5] = [60, 58, 62, 64, 69, 70, 74, 75, 77, 77, 74, 72]; // Saturday
+tempsForWeek[6] = [63, 63, 64, 68, 71, 74, 75, 76, 77, 75, 74, 73]; // Sunday
+
+// homework:
+// find the highest temperature of the week.
+
+
+// Your code here
+// I found this way of making Math.max work with non-number items in an array, such as commas. 
+// This took me forever to solve, because simply applying Math.max would generate isNaNs when encountering commas. 
+// The apply function forces Math to be applied to each array value.
+var weekHigh = Math.max.apply(Math,tempsForWeek[0,1,2,3,4,5,6]);
+
+// Create an array of days of the week e.g. ["Monday", "Wednesday"] // that hit that high temperature
+
+//var daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+// Your code here
+// This one took a while, too. I couldn't see how making an array of day names was going to work with the existing code, 
+// so I created new variables finding whether there's a match to the weekly high temperature using the find function.
+// I know the correct way to do this is to iterate with loops to match values, but I couldn't understand how to do that 
+//with the level of abstration we're operating at, where we have arrays of arrays.
+var mondayArray = tempsForWeek[0].find(matchesWeeklyHigh);
+var tuesdayArray = tempsForWeek[1].find(matchesWeeklyHigh);
+var wednesdayArray = tempsForWeek[2].find(matchesWeeklyHigh);
+var thursdayArray = tempsForWeek[3].find(matchesWeeklyHigh);
+var fridayArray = tempsForWeek[4].find(matchesWeeklyHigh);
+var saturdayArray = tempsForWeek[5].find(matchesWeeklyHigh);
+var sundayArray = tempsForWeek[6].find(matchesWeeklyHigh);
+
+//thought I might need this info for a for loop:
+var numberOfDays = tempsForWeek.length;
+
+document.write("The highest temperature for the week was " + weekHigh + ". <br><br>");
+//The function matching daily highs to weekly highs:
+function matchesWeeklyHigh(hightemp) {
+  return hightemp == (weekHigh);
+}
+
+//Again, I should be using a for loop here, I know.
+document.write("Undefined values mean the daily high temperature was less than the weekly high tempertaure. <br><br>")
+document.write("Monday matched weekly high:" + mondayArray + "<br>")
+document.write("Tuesday matched weekly high:" + tuesdayArray + "<br>")
+document.write("Wednesday matched weekly high:" + wednesdayArray + "<br>")
+document.write("Thursday matched weekly high:" + thursdayArray + "<br>")
+document.write("Friday matched weekly high:" + fridayArray + "<br>")
+document.write("Saturday matched weekly high:" + saturdayArray + "<br>")
+document.write("Sunday matched weekly high:" + sundayArray + "<br>")
+
+
+</script>
+</body>
+</html>

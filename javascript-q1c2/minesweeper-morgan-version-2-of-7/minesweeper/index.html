@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  
+<head>
+   <meta charset="utf-8">
+   <title>Minesweeper!</title>
+  
+   <link rel="stylesheet" type="text/css" href="minesweeper.css"> 
+  
+   <script>
+	// *********************************************
+	// **    Code Author:   Morgan Lang 
+	// **    Date: 10/10/17
+     
+	// **    Description: This script is designed to do the following:
+    // **     A. Prompt the user for their name using the prompt() method 
+    // **     B. capture their name in a variable ("userName") 
+    // **     C. greet them with their own name by invoking userName in an alert() and concatenating it with some string operators.
+	// **    
+	// **********************************************
+	// **    Change Log 
+	// **     10/09/17 – Added header and changelog. Cliff Knopik
+    // **     10/09/17 - Created html, js, and css. Morgan Lang
+    // **     10/10/17 - Copied in header and changelog, commented. Morgan Lang
+    // **     10/17/17 - Added counting loop and conditional. Commented. Morgan Lang
+	// **********************************************
+	
+	// Put script here
+     var countUp = 1
+     
+    // ** Declaring the variable userName and storing the user's name in it using prompt():
+      var userName = prompt("Welcome to Minesweeper. What is your name?");
+     
+    // ** Concatenating the stored user name with some friendly strings in an alert().  
+      var userAlert = alert("Hi, " + userName + "." + " " + "Good luck!");
+     
+    // ** Declaring the variable userNumber and storing the user's number in it using prompt():
+      var userNumber = prompt("Enter w whole number between 1 and 10 indicating how wide you want the Minesweeper grid to be.");
+
+    // ** Creating a loop. Starting at number 1, for every number between 1 and userNumber inclusive, write the string "0" to the document.
+      for (countUp = 1; countUp <= userNumber; countUp ++) {
+        document.write("0");
+     }
+    
+     // ** A conditional. Once the countUp loop reaches the end and matches the value captured in userNumber, report the width of the grid to the user.
+      if (countUp == userNumber); {
+        document.write("<br><br>" + "<h4>This grid is " + userNumber + " units wide.</h4>");
+    }
+     
+
+	
+   </script>
+  
+</head>
+  
+<body>
+      
+      <div id="MSTitle">
+        <h2>Minesweeper!</h2>
+      </div>
+      
+      <div id="MSDirections">
+        <h4>Click on the grid below, and try not to get blown up.</h4>
+      </div>
+  
+      <div id="MSGame">
+        <!--Assuming it will be helpful to put the game in a div eventually.-->
+      </div>
+  
+</body>
+</html>

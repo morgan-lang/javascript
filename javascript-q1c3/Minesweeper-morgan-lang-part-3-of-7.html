@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Minesweeper - part 3 / 7</title>
+</head>
+<body>
+
+
+   <script>
+   
+var userName = prompt("Hi! Ready to play Minesweeper? Great. What's your name?")
+var userNumber = prompt("OK, " + userName + ". Go ahead and give me a number. Then, we'll create a minesweeper grid using that number. For example, if you give me the number 10, we'll make a 10X10 grid.");
+
+//creating an empty array before we start pushing values to it:
+
+var mineArray = [];
+
+//Populating the array with the right number of zeroes by pushing the character "0" 
+//for the number of iterations specified by the user in userNumber:
+
+for (var i=0;i<(userNumber);i++){
+	mineArray.push("0");
+}
+
+//Now, we can iterate through writing the correct number of rows, as specified by userNumber. 
+//Note that writing the html <br> or "break" tag after each iteration is what creates the "rows",
+//and using the "join" builtin function allows us to bypass the commas we would 
+//normally see in an array by joining each value with no separator, giving us "00000..." instead of "0,0,0,0,0,0...:
+
+for (var i=0;i<(userNumber);i++){
+	document.write(mineArray.join(""));
+	document.write("<br>");
+}
+
+	// *********************************************************************************
+	// **    Code Author:   Don Sando 
+	// **    Date: 			10/15/2017                        
+	// **    Description: 	Minesweeper user name prompt and display.
+	// **    
+	// *********************************************************************************
+	// **       Change Log 
+	// **     10/9/17  – Added header and changelog. Cliff Knopi
+	// **     10/15/17 - Added script to prompt for, and display a user's name
+	// **                (Minesweeper project, part 1). Don Sando
+	// **     10/19/17 - Expanded script to prompt for how wide the minefield should be (how many locations) Minimum of 5
+    // **				 Loop through and display a zero for each space.
+    // **                if 5 entered would display: 00000. Pavel Trekell
+	// **	  10/28/17 - Commented out previous script and replaced with a 2d array to get the grid we need. 
+	// **				 Sorry! I couldn't think of a way to turn the existing script into an array. Morgan Lang
+	// *********************************************************************************
+	
+
+	// initialize variables
+	//var person			= "";
+	//var welcomeMessage 	= "";
+	//var fieldWidth		= 0;
+	//var fieldHeight		= 0;
+
+	
+	// loop until user actually enters their name
+	//while(person == "") {
+		// Prompt for a user's full name
+		//person = prompt("Please enter your name");
+	//}
+
+	
+	// Create a welcome message for the Minesweeper user
+	//if (person == null || person == "") {
+		// User canceled the prompt (null) dialog or did not enter a name (empty string)
+		//welcomeMessage = "No name entered";
+		
+	//} else {
+		// User entered text in the prompt dialog, construct a welcome message
+		// with the name entered
+		//welcomeMessage = "Welcome " + person + "!";
+	//}
+	
+
+	// Display the welcome message in an alert box
+	//alert(welcomeMessage);
+
+
+
+
+
+	// **************************************************************
+	// **
+	// ** Prompt for how wide the minefield should be (how many locations) 
+	// ** Minimum of 5
+	// **
+	// **************************************************************
+
+	// loop until user actually enters a number (by running isNaN) for the field width 
+	// and that the number is 5 at minimum
+	// isNaN should catch empty (null) strings as well but added another null condition just to be on the safe side
+	//while((fieldWidth < 5) || (isNaN(fieldWidth)) || (fieldWidth == null)) {
+		// Prompt for the field width
+		//fieldWidth = prompt("How wide the minefield should be (how many locations)?\nMinimum of 5 is required!");
+	//}
+
+
+
+
+	// **************************************************************
+	// **
+	// ** Loop through fieldWidth and display a zero for each space.
+	// **
+	// **************************************************************
+
+	// make sure that the fieldWith is at least 5, that it is an actual number (negating isNaN)
+	// and that it is not null
+	
+	//if((fieldWidth >= 5) && (!isNaN(fieldWidth)) && (fieldWidth != null)) {
+		
+
+		//loop as long as fieldWidth is more than 0 and there are iterations left
+		//while(fieldWidth > 0) {
+
+			// print "0" in page for each iteration
+			//document.write("0");
+
+			// decrease the fieldWidth to remove current loop iteration
+			//fieldWidth--;
+		//}
+	//}
+
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

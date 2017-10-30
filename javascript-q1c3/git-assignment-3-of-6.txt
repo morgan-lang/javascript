@@ -1,0 +1,11 @@
+1)Read https://guides.github.com/activities/contributing-to-open-source/ 
+
+2)On that page click GitHub Explore – find a JavaScript based project that 
+looks like it would be interesting to work on someday. Upload a text file with 
+the link and a brief summary on what the project is and why it seems interesting.
+
+3)Follow the instructions at https://help.github.com/desktop/guides/getting-started/ 
+to download and install Github for Desktop and configure it to authenticate to your online account.
+
+OPTIONAL: Complete the https://hacktoberfest.digitalocean.com/  
+requirements and get a free T-Shirt!
