@@ -1,0 +1,117 @@
+Enter passphrase for /c/Users/morgan/.ssh/id_rsa:
+Identity added: /c/Users/morgan/.ssh/id_rsa (/c/Users/morgan/.ssh/id_rsa)
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment
+$ git init
+Initialized empty Git repository in C:/Users/morgan/google-drive/school/javascript-git-assignment/.git/
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment (master)
+$ git clone git@github.com:UW-JSCRIPT100B/JSCRIPT100_AUTUMN2017.git
+Cloning into 'JSCRIPT100_AUTUMN2017'...
+remote: Counting objects: 10, done.
+remote: Compressing objects: 100% (6/6), done.
+remote: Total 10 (delta 1), reused 5 (delta 1), pack-reused 3
+Receiving objects: 100% (10/10), done.
+Resolving deltas: 100% (1/1), done.
+Checking connectivity... done.
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        JSCRIPT100_AUTUMN2017/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment (master)
+$ cd J*
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (master)
+$ ls
+Git-Assignment-4.txt.TXT  README.md
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (master)
+$ git show-branch -a
+* [master] remove my file that i accidently uploaded
+ ! [origin/HEAD] remove my file that i accidently uploaded
+  ! [origin/master] remove my file that i accidently uploaded
+---
+*++ [master] remove my file that i accidently uploaded
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (master)
+$ git branch morgan-lang
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (master)
+$ git checkout morgan-lang
+Switched to branch 'morgan-lang'
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ ls
+Git-Assignment-4.txt.TXT  README.md
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ git show-branch -a
+! [master] remove my file that i accidently uploaded
+ * [morgan-lang] remove my file that i accidently uploaded
+  ! [origin/HEAD] remove my file that i accidently uploaded
+   ! [origin/master] remove my file that i accidently uploaded
+----
++*++ [master] remove my file that i accidently uploaded
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ git commit -a -m "morgan lang added books [morgan-lang]"
+[morgan-lang 767f3f7] morgan lang added books [morgan-lang]
+ 1 file changed, 12 insertions(+)
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ git show-branch -a
+! [master] remove my file that i accidently uploaded
+ * [morgan-lang] morgan lang added books [morgan-lang]
+  ! [origin/HEAD] remove my file that i accidently uploaded
+   ! [origin/master] remove my file that i accidently uploaded
+----
+ *   [morgan-lang] morgan lang added books [morgan-lang]
++*++ [master] remove my file that i accidently uploaded
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ git push origin morgan-lang
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 840 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To git@github.com:UW-JSCRIPT100B/JSCRIPT100_AUTUMN2017.git
+ * [new branch]      morgan-lang -> morgan-lang
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$ git status
+On branch morgan-lang
+nothing to commit, working directory clean
+
+morgan@snackboxT510 MINGW64 ~/google-drive/school/javascript-git-assignment/JSCRIPT100_AUTUMN2017 (morgan-lang)
+$
+
+
+
+Morgan Lang
+
+Title: Don't Make Me Think: A Common-Sense Approach To Web Usability, 2nd Edition
+Author: Steve Krug
+Why Recommend: I work in tech writing and UX design, and I consider this is a fundamental text. I look to it for guidance on simplifying text and design elements. 
+
+Title: The Design of Everyday Things, Revised and Expanded Edition
+Author: Donald Norman
+Why Recommend: This is a fascinating survey/critique of industrial design and should be required reading for anyone who makes things for a living. The key idea is: the use of a thing should be apparent from its design.
+
+Title: Cats' Paws and Catapults: Mechanical Worlds of Nature and People
+Author: Steven Vogel and Kathryn K. Davis
+Why Recommend: This book is key to understanding how nature and natural forms have been imitated and adapted by humans throughout history.

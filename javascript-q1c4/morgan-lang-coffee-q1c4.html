@@ -1,0 +1,45 @@
+
+    <!--Create a program that prompts the user to end the kind of coffee they want, the kind of milk they want (e.g. cream or steamed milk), and the kind of sweetener they want.
+    Each drink and condiment will have a different price. (Your choice for prices.)
+    Your program should compute a total price for the drink based on the various options the user has for drinks and condiments.
+    Display the final price in the page using document.write().
+    For this homework, put your JavaScript and HTML in a file named coffee.html.
+    Comment your code, including your name, date, assignment name at the top.-->
+	
+<!--Morgan Lang, Coffee Assignment, Week 4-->
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Minesweeper - part 3 / 7</title>
+</head>
+<body>
+<script>
+
+var userName = prompt("Hi! Ready to play Minesweeper? Great. What's your name?")
+var userNumber = prompt("OK, " + userName + ". Go ahead and give me a number. Then, we'll create a minesweeper grid using that number. For example, if you give me the number 10, we'll make a 10X10 grid.");
+
+//creating an empty array before we start pushing values to it:
+
+var mineArray = [];
+
+//Populating the array with the right number of zeroes by pushing the character "0" 
+//for the number of iterations specified by the user in userNumber:
+
+for (var i=0;i<(userNumber);i++){
+	mineArray.push("0");
+}
+
+//Now, we can iterate through writing the correct number of rows, as specified by userNumber. 
+//Note that writing the html <br> or "break" tag after each iteration is what creates the "rows",
+//and using the "join" builtin function allows us to bypass the commas we would 
+//normally see in an array by joining each value with no separator, giving us "00000..." instead of "0,0,0,0,0,0...:
+
+for (var i=0;i<(userNumber);i++){
+	document.write(mineArray.join(""));
+	document.write("<br>");
+}
+
+</script>
+
+</body>
+</html>
