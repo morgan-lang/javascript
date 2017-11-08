@@ -1,43 +1,118 @@
-
-    <!--Create a program that prompts the user to end the kind of coffee they want, the kind of milk they want (e.g. cream or steamed milk), and the kind of sweetener they want.
-    Each drink and condiment will have a different price. (Your choice for prices.)
-    Your program should compute a total price for the drink based on the various options the user has for drinks and condiments.
-    Display the final price in the page using document.write().
-    For this homework, put your JavaScript and HTML in a file named coffee.html.
-    Comment your code, including your name, date, assignment name at the top.-->
-	
 <!--Morgan Lang, Coffee Assignment, Week 4-->
+
 <html lang="en">
 <head>
    <meta charset="utf-8">
-   <title>Minesweeper - part 3 / 7</title>
+   <title>Coffee</title>
+
 </head>
 <body>
+
+
+
 <script>
 
-var userName = prompt("Hi! Ready to play Minesweeper? Great. What's your name?")
-var userNumber = prompt("OK, " + userName + ". Go ahead and give me a number. Then, we'll create a minesweeper grid using that number. For example, if you give me the number 10, we'll make a 10X10 grid.");
+//category & price variables:
 
-//creating an empty array before we start pushing values to it:
+var cof01 = ["regular",2.50];
+var cof02 = ["decaf",2.75];
+var cof03 = ["espresso",3.00];
 
-var mineArray = [];
+var milk01 = ["whole", 0.25];
+var milk02 = ["2%", 0.25];
+var milk03 = ["soy", 0.25];
 
-//Populating the array with the right number of zeroes by pushing the character "0" 
-//for the number of iterations specified by the user in userNumber:
+var sug01 = ["sugar", 0.25] ;
+var sug02 = ["truvia", 0.25];
+var sug03 = ["agave", 0.25];
+    
+//array to which we will push prices during the item selection process for adding together later:
+    
+var addUpArray = [];
+    
 
-for (var i=0;i<(userNumber);i++){
-	mineArray.push("0");
+//prompts to gather user choices:
+
+var coffeeType = prompt("What kind of coffee would you like? Choices: " + cof01[0] + ", "+ cof02[0] + ", "+ cof03[0] + ".")
+
+var milkType = prompt("OK, now what kind of milk would you like in your coffee? Choices: " + milk01[0] + ", "+ milk02[0] + ", " + milk03[0] + ".")
+
+var sugarType = prompt("Great. Finally, what kind of sweetener would you like? Choices: " + sug01[0] + ", "+ sug02[0] + ", " + sug03[0] + ".")
+
+//the array where we store user choices for later use:
+
+var coffeeInput = [coffeeType, milkType, sugarType];
+
+
+//coffee selection:
+    
+if (coffeeInput[0] == "regular"){
+	document.write("You selected " + coffeeInput[0] + " coffee." + "<br>Regular coffee costs $" + cof01[1] + "<br><br>");
+    addUpArray.push(cof01[1]);
+	}
+	
+else if (coffeeInput[0] == "decaf"){
+	document.write("You selected " + coffeeInput[0] + " coffee." + "<br>Decaf coffee costs $" + cof02[1] + "<br><br>");
+    addUpArray.push(cof02[1]);
+	}
+	
+else if (coffeeInput[0] == "espresso"){
+	document.write("You selected " + coffeeInput[0] + "." + "<br>Espresso costs $" + cof03[1] + "<br><br>");
+    addUpArray.push(cof03[1]);
+	}
+	
+else {document.write("You input " + coffeeInput[0] + "," + " which is not a valid option. Please try again.<br><br>");
+	}
+	
+//milk selection:
+
+if (coffeeInput[1] == "whole"){
+	document.write("You selected " + coffeeInput[1] + " milk." + "<br>" + "Whole milk costs $" + milk01[1] + "<br><br>");
+    addUpArray.push(milk01[1]);
+	}
+	
+else if (coffeeInput[1] == "2%"){
+	document.write("You selected " + coffeeInput[1] + " milk." + "<br>" + "2% milk costs $" + milk02[1] + "<br><br>");
+    addUpArray.push(milk02[1]);
+	}
+	
+else if (coffeeInput[1] == "soy"){
+	document.write("You selected " + coffeeInput[1] + " milk." + "<br>" + "Soy milk costs $" + milk03[1] + "<br><br>");
+    addUpArray.push(milk03[1]);
+	}
+	
+else {document.write("You input " + coffeeInput[1] + "," + " which is not a valid option. Please try again.<br><br>");
+	}
+	
+//sugar selection:
+
+if (coffeeInput[2] == "sugar"){
+	document.write("You selected " + coffeeInput[2] + "." + "<br>Sugar costs $" + milk03[1] + "<br><br>");
+    addUpArray.push(sug01[1]);
+	}
+	
+else if (coffeeInput[2] == "truvia"){
+	document.write("You selected " + coffeeInput[2] + "." + "<br>Truvia costs $" + milk03[1] + "<br><br>");
+    addUpArray.push(sug02[1]);
+	}
+	
+else if (coffeeInput[2] == "agave"){
+	document.write("You selected " + coffeeInput[2] + "." + "<br>Agave costs $" + milk03[1] + "<br><br>");
+    addUpArray.push(sug03[1]);
+	}
+	
+else {document.write("You input " + coffeeInput[2] + "," + " which is not a valid option. Please try again.<br><br>");
+	}
+    
+//totalling the final cost with a for loop through the addUpArray:
+    
+var finalTotal=0;
+
+for(var i in addUpArray) { 
+    finalTotal += addUpArray[i]; 
 }
-
-//Now, we can iterate through writing the correct number of rows, as specified by userNumber. 
-//Note that writing the html <br> or "break" tag after each iteration is what creates the "rows",
-//and using the "join" builtin function allows us to bypass the commas we would 
-//normally see in an array by joining each value with no separator, giving us "00000..." instead of "0,0,0,0,0,0...:
-
-for (var i=0;i<(userNumber);i++){
-	document.write(mineArray.join(""));
-	document.write("<br>");
-}
+    
+document.write("Your final total is: $" + finalTotal);
 
 </script>
 
