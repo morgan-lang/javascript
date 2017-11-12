@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Minesweeper</title>
+
+   <style type="text/css">
+            body {
+                margin: 0;
+            }
+
+            #primary-content {
+              font: lighter normal 5rem Arial, sans-serif;
+              text-align: center;
+              color: #08E;
+              border-bottom: 0.06rem dashed lightblue;
+              margin-bottom: 1rem;
+            }
+
+            #body-footer {
+              border-top: 0.06rem dashed lightblue;
+              margin-top: 1rem;
+              font-family: Quicksand;
+              text-align: center;
+              font-size: 2vw;
+              font-weight: bold;
+              }
+
+              #main-document {
+			  white-space: nowrap;
+                text-align: center;
+                font-size: 2vw;
+                margin: 0 auto;
+                width: 80%;
+                font-family: Quicksand;
+                padding: 1rem;
+              }
+    </style>
+</head>
+<body>
+      <div id="header-title">
+        <h1 id="primary-content">Minesweeper</h1>
+      </div>
+
+      <div id="main-document">
+        <script>
+            // console.log("Hello Mars!");
+            //
+            // ****************************************************
+            // **	Code Author:   Susannah Pitman
+            // **	Date: 10/21/2017
+            // **	Description: Project Part 1 of 7
+            // **
+            // *****************************************************
+            // **
+            // **   Change Log:
+            // **
+            // **   Code Author: Asmerom Samuel Ghebrihiwet
+            // **   Date: 21 Oct 2017
+            // **   Description: Project 2 of 7
+            // **       I commented out first person's code  because
+            // **       it was getting into an infinite loop in the
+            // **       while loop.
+            // **       I added CSS in the header.
+            // **       Also, I moved he JavaScript code to the Body section
+            // **       from the head section of the HTML
+            // **       The prompt asks the user to enter width between 0 to 5.
+			      // **
+            // *****************************************************
+            // **
+            // **   Change Log:
+            // **
+            // **   Code Author: Jun Kim
+            // **   Date: 10/28/17
+            // **   Description: Project 3 of 7
+            // **       - Changed the minefield range from 1-5 to a minimum of 5.
+            // **       - It was a challenge to use multi-dimension arrays using the provided code from previous coder.
+            // **       - Decided to use the existing variable (display) and use the .length of it to add additional lines.
+            // **       - Subtracted 1 in order to avoid additional 'display' line from showing.
+            // **
+            // *****************************************************
+            // **   Change Log:
+            // **
+            // **   Code Author: Asmerom Samuel Ghebrihiwet
+            // **   Date: 31 Oct 2017
+            // **   Description: Project 4 of 7
+            // **     (1) This is weird, because the code that I submitted
+            // **         for Project 2 of 7, circled back to me only after
+            // **         it had been to one other student. Hard to believe since
+            // **         there are 50 students in the class according to class canvas list.
+            // **         Any way, since the other student only added/updated
+            // **         six lines of code for Project 3 of 7,
+            // **         I'm basically goning to have to revise/update my own code.
+            // **
+            // **     (2) To comply with the new requirement for Project 4 of 7,
+            // **         I decided to re-write the whole code
+            // **         to use separate functions to handle different tasks.
+            // **
+            // **     (3) In addition, I decided to use multi-dimension  (2-dimensional)
+            // **         array to hold the values of the minefield cells.
+            // **
+            // **     (3) Just for reference, the old code is commented out below
+            // **         at the beginning of the code block.
+            // *****************************************************
+            // **
+            // **   Change Log:
+            // **
+            // **   Code Author: Andrew Stefanich
+            // **   Date: 11/11/17
+            // **   Description: Project 5 of 7
+            // **       -Insert a mine into a randomly selected point in the matrix
+            // **
+            // **
+        
+            
+            // this function declarion collect user
+            // name by asking the user to enter name.
+            var displayName = function identifyPlayer() {
+                var name = "";
+
+                // the following loop is used to check
+                // and prompt again if the entered name is
+                // null or empty
+                do {
+                      name = prompt("Ente your name? ", "Yoda");
+                } while (name == null ||  name == "");
+
+                return name;
+            };
+
+            
+            // the following function declaration creats arrays for
+            // each row of the minefield initialized with the value val
+            var minefieldRow = function createArray(length, rowHasMine) {
+                let arr = [];
+                 
+                //first fill in the row with 0's
+                for (let i = 0; i < length;i++){
+                	arr.push(0);
+                }
+                //if this row should contain the mine, generate a random column index
+                //assign M to the column index
+                if(rowHasMine){
+                	let randomColumnIndex = getRandomNum(0, length);
+                    console.log(`Column ${randomColumnIndex} should contain mine`)
+                	arr[randomColumnIndex] = "M"
+                }
+
+                return arr;
+            };
+
+            // the following function declaration collects the size
+            // of the minefield width and confirms the selected size
+            var createDimension = function collectMinefieldInfo() {
+                var size = 0;
+
+                do {
+                   size = prompt("Enter minefield width (minimum of 5): ");
+                } while (!(size > 5) );
+
+                var conf = confirm("The minefield will be " + size + " X " + size + ".");
+
+                return size;
+            }
+
+            
+
+            // the following function declaration prints out '0'
+            // characters for each minefield cell and for as
+            // many lines as the width of the minefield
+            var start = function displayMinefield() {
+                  var name = displayName();
+                  var msg = name + ", welcome to Minesweeper!";
+                  alert(msg );
+
+                  var size = createDimension();
+                  
+ 
+                  //random row to insert the mine
+                  let randomRowIndex = getRandomNum(0, size);
+
+                  var minefield = [];
+
+                  // the following for-loop continually pushes
+                  // rows of minefield into the minefield mutltdimensional
+                  // array. Pass true if the current row should hold the mine
+                  for (var i = 0; i < size; i++) {
+                	  if(i == randomRowIndex){
+                		  minefield.push(minefieldRow(size, true));
+                	  } else{
+                		  minefield.push(minefieldRow(size, false));
+                	  }
+                  }
+
+                  // the following for-in loop prints out the rows
+                  // of the minefield mutltdimensional array one
+                  // at a time.
+                  for (var i in minefield ) {
+                    console.log(minefield[i].join(" ") );
+                    document.write( minefield[i].join(" ") + "<br/>");
+                  }
+            };
+            
+            function getRandomNum(min, max){
+            	return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            start(); // start the program to build minefield
+        </script>
+      </div>
+
+      <div id="body-footer">
+        <p>&#169 2017 JSCRIPT 100A Students.</p>
+      </div>
+</body>
+</html>

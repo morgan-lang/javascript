@@ -40,52 +40,53 @@ var userNumber = prompt("OK, " + userName + ". " + userInstructions);
 //Invoking the userInput function and storing the return value as global variable userNumber:
 var userNumber = userInput();
 
-//creating an empty array before we start pushing values to it:
 
 var mineArray = [];
 
-//Populating the array with the right number of zeroes by pushing the character "0" 
-//for the number of iterations specified by the user in userNumber:
+
+
 function populateArray(){ 
 	for (var i=0;i<(userNumber);i++){
 	mineArray.push("0");
+	for (var j=0;j<(userNumber);j++){
+	var randomInsert = Math.floor(Math.random() * (userNumber)) + 1;
+	}
+	mineArray.splice(randomInsert, 1, "M");
+	document.write(mineArray.join("") + "<br>");
+	mineArray.length = 0;
 	}
 }
 
-//Invoking the populateArray function:
-populateArray();
+			
+/*function spliceArray() {
+		var randomInsert = Math.floor(Math.random() * (userNumber)) + 1;
+		mineArray.splice(randomInsert, 1, "M");
+		
+}*/
 
-//Now we can iterate through writing the correct number of rows, as specified by userNumber. 
-//Note that writing the html <br> or "break" tag after each iteration is what creates the "rows",
-//and using the "join" builtin function allows us to bypass the commas we would 
-//normally see in an array by joining each value with no separator, giving us "00000..." instead of "0,0,0,0,0,0...":
+/*function createGrid(){
 
-//original iteration writing just 0s:
-/*function createGrid(){for (var i=0;i<(userNumber);i++){
-	document.write(mineArray.join(""));
-	document.write("<br>");
+		for (var i=0;i<(userNumber);i++){
+			document.write(mineArray.join("") + "<br>");
 	}
 }*/
 
-//copy of iteration inerting random Ms:
-function createGrid(){for (var i=0;i<(userNumber);i++){
-	document.write(mineArray.join(""));
-	document.write("<br>");
-	}
+/*var j = 0;
+
+
+do {
+	document.write("ermegerd!");
+    populateArray();
+	spliceArray();
+	createGrid();
+	mineArray.length = 0;
+    j++;
+	
 }
+while (j < userNumber); */
 
-
-//Generating a random number between 1 and whatever number the user inputs as userNumber:
-var randomInsert = Math.floor(Math.random() * (userNumber)) + 1;
-document.write("Here's a random number: " + randomInsert + "<br>");
-
-// Insert a character using the splice function. Now I'll just have to 
-var splicedArray = mineArray.splice(randomInsert, 1, "M");
-document.write("Here's a spliced array: " + splicedArray + "<br>");
-
-//Invoking the createGrid function:
-createGrid();
-
+populateArray();
+//createGrid();
 </script>
 
 </body>

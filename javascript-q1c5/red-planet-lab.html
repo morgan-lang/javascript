@@ -7,15 +7,20 @@
 </style>
 <script>
 
+
+
 function init() {
 var planet = document.getElementById("greenplanet");
+
 planet.innerHTML = "Red Alert! You're a dork!";
 planet.setAttribute("class", "redtext");
 }
 
-window.onload = init;
+//This funs init as soon as the DOM is loaded:
+//window.onload = init; 
 
-
+//this runs init after 4 seconds:
+setTimeout(init, 4000);
 
 </script>
 </head>
@@ -30,6 +35,7 @@ window.onload = init;
 <p id="blueplanet">All systems A-OK</p>
 
 <script>
+
 
 //note that it's "Id," NOT "ID". Note also that these take effect even though init has taken effect
 var planet = document.getElementById("redplanet");

@@ -1,0 +1,84 @@
+<html>
+
+   <!-- 
+   ...................................
+    Instructions:
+	-Give each element a unique id.
+    -Add a CSS style to style the elements in your page. Style the <h1> Blue, <p> Green, <div> Red colors
+    -Write code to apply style using JavaScript to elements once the page is loaded.
+    -Write code to add an "alt" attribute to the image once the page is loaded. (The alt attribute contains a textual description of the image).
+	-Write code to get the <div> from the DOM, and display that <div>'s innerHTML value in an alert.
+    ..................................
+	Author: Morgan Lang
+	Date: 11/10/17
+	
+	-->
+
+<head>
+<style>
+.blacktext { color: black; font-weight: bold}
+
+h1 {color: blue;}
+p {color: green;}
+div {color: red;}
+</style>
+<script>
+//Setting a delay before init executes, so that the DOM change is obvious to the user:
+setTimeout(init, 3000);
+
+//the init function:
+function init() {
+
+//Defining elements as variables:
+var h1stylechange = document.getElementById("h1id");
+var pstylechange = document.getElementById("pid");
+var divstylechange = document.getElementById("divid");
+var imgstylechange = document.getElementById("imgid");
+
+//Making changes in content and style to the elements:
+h1stylechange.innerHTML = "Stuff changed!";
+h1stylechange.setAttribute("class", "blacktext");
+
+pstylechange.innerHTML = "Stuff changed!";
+pstylechange.setAttribute("class", "blacktext");
+
+divstylechange.innerHTML = "Stuff changed!";
+divstylechange.setAttribute("class", "blacktext");
+}
+
+//Setting a delay before alertDisplay executes so the user first sees stayle and content changes, then receives the alert message:
+setTimeout(alertDisplay, 5000);
+
+function alertDisplay() {
+
+var divalert = document.getElementById("divid");
+//Since we only want the content of the div, we get the innerHTML:
+alert(divalert.innerHTML);
+
+}
+
+//Setting a delay before kittenDisplay executes so the alt text gets changed only after everything else has executed:
+setTimeout(kittenDisplay, 6000);
+
+function kittenDisplay(){
+document.getElementById("kittenid").setAttribute("alt", "A cute, fluffy kitten on its back");
+}
+
+</script>
+</head>
+<body>
+
+<h1 id="h1id">This header is about to change.</h1>
+
+<p id="pid">This paragraph is about to change.</p>
+
+<div id="divid">This div is about to change.</div>
+
+<br>
+
+<img id="kittenid" src="kitten.jpg" alt="this alt is about to change" width="500"> 
+
+</body>
+
+</html>
+
