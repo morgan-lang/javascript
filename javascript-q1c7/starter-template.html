@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Starter Template</title>
+</head>
+<body>
+<p id="testp"></p>
+
+<p id="testp2"></p>
+
+<p id="testp3"></p>
+
+<script>
+
+//objects!
+
+var person = {
+	name: "Joe",
+	age: 23,
+	canBuyAlcohol: function(){if (person.age <21) {return false;} else if {(person.age >=21) {return true;}} ;},
+	canBuyAlcoholOutput: function(){document.getElementById("testp2").innerHTML = (name + " can buy alcohol: " + person.canBuyAlcohol)}
+};
+
+//you can alter objects by injecting new values in a very straightforward way:
+//Joe.weight=17;
+
+//Joe.newProperty = "test";
+
+//let's grab a bunch of info using a for property in object loop. Awesome:
+
+//for (let JoeProps in Joe){
+//console.log(JoeProps);
+//console.log(Joe[JoeProps]);
+
+//}
+
+
+
+//console.log(Joe.newProperty);
+
+//console.log(Joe.likesFetching);
+
+document.getElementById("testp").innerHTML = (person.name) + "<br>" + (person.age)+ "<br>" + (person.canBuyAlcohol); 
+
+//calling functions using methods:
+
+person.canBuyAlcohol();
+person.canBuyAlcoholOutput();
+
+
+
+
+
+</script>
+
+</body>
+</html>

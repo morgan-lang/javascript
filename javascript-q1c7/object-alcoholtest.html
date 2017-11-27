@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Alcohol Test</title>
+      <style>
+  
+#container {
+	border: 5px solid red;
+	margin-top: 5%;
+	margin-left: 15%;
+	height: 70%;
+	width:70%;
+	background-image: url("alcohol.jpg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+#intro {
+	border: 5px solid red;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	background-color: #ffffff;
+	width: 50%;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+	margin: 20px;
+}
+
+#results {
+	border: 5px solid red;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	background-color: #ffffff;
+	width: 50%;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+	margin: 20px;
+}
+
+#currentage {
+	border: 5px solid red;
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	background-color: #ffffff;
+	width: 50%;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+	margin: 20px;
+}
+
+button {
+	font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+	float: left;
+	border: 2px solid;
+    border-radius: 25px;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+	margin: 20px;
+}
+</style>
+</head>
+<div id="container">
+
+<div id="intro">Let's perform a test to determine <br>whether Joe Josephson is old enough to buy alcohol.</div>
+
+<div id="currentage">Joe Josephson's current age is 19.</div>
+
+<div id="results">Test results will appear here.</div>
+
+<button id="birthdaybutton" onclick="person.birthday()">Click to increase Joe's age by 1 year.</button>
+
+<button id="testbutton" onclick="alcoholTest(), testResults(), consoleOutput(), personAge()">Click to determine whether Joe is now old enough to buy alcohol.</button>
+
+</div>
+
+<script>
+var person = {
+    firstName: "Joe",
+    lastName : "Josephson",
+	age: 19,
+    fullName : function() {
+       return this.firstName + " " + this.lastName;
+    },	
+	birthday : function() {
+	var addYear = person.age;
+	addYear = person.age +1;
+	person.age = addYear;
+	return addYear;
+	}
+};
+
+function alcoholTest() {
+	var personAge = person.age;
+	var notOldEnough = " is not old enough to legally drink."
+	var isOldEnough = " is old enough to legally drink."
+		if (personAge < 21){
+		return notOldEnough;
+		}
+		else {
+		return isOldEnough;
+		}
+
+};
+
+function personAge(){
+document.getElementById("currentage").innerHTML = person.fullName() + "'s current age is " + person.age;
+}
+
+function testResults(){
+document.getElementById("results").innerHTML = person.fullName() + alcoholTest();
+}
+
+function consoleOutput(){
+	//QA:
+	console.log(person);
+	console.log(person.age);
+}
+
+testResults();
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>My First JavaScript</title>
+   <script>
+    /*
+		var someArray = [4,"Cliff",[true,false],7];
+		//someArray[0]=4;
+		someArray[2][1]="sometext";
+		
+		// 5 x 5 grid
+		var minefield = [];
+		minefield[rows] =[cols,cols,cols,cols,cols]
+		minefield[0] = [0,0,0,0,0];
+		minefield[1] = [0,0,0,0,0];
+		minefield[2] = [0,0,0,0,0];
+		minefield[3] = [0,0,0,0,0];
+		minefield[4] = [0,0,0,0,0];
+		
+		minefield[0] = "00000";
+		minefield[1] = "00000";
+		minefield[2] = "00000";
+		minefield[3] = "00000"
+		minefield[4] = "00000";
+		
+		//minefield[0][2]="M";
+		
+		
+	*/
+
+   </script>
+</head>
+<body>
+<p>The HTML goes here</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+		
+		  let minefieldWidth=5;
+  
+          let minefield = [];
+
+		//		minefield[rows] =[cols,cols,cols,cols,cols]
+		/*
+		minefield[0] = [0,0,0,0,0];
+		minefield[1] = [0,0,0,0,0];
+		minefield[2] = [0,0,0,0,0];
+		minefield[3] = [0,0,0,0,0];
+		minefield[4] = [0,0,0,0,0];
+		*/
+		 // create Rows
+		 for (let rows=0;rows<minefieldWidth;rows++){
+			minefield[rows] = []; // Initialize the rows array
+			// create Columns
+			for (let cols=0;cols<minefieldWidth;cols++){
+				minefield[rows][cols] = 0; // Add a 0 into the current [rows][cols]
+			}
+		 }
+		  
+          //generate random number with M. 
+          let mineRow = Math.floor(Math.random() * minefieldWidth); 
+          let mineCol = Math.floor(Math.random() * minefieldWidth); 
+          minefield[mineRow][mineCol] = "M";
+		  
+		  // Display grid
+		  // Loop through rows
+		 for (let rows=0;rows<minefieldWidth;rows++){
+			//  loop through columns
+			for (let cols=0;cols<minefieldWidth;cols++){
+				document.write(minefield[rows][cols]); // Display what is in current [rows][cols]
+			}
+			// Add a break to display new row
+			document.write("<br>");
+		 }
+		 
+		 
+</script>
+</body>
+</html>

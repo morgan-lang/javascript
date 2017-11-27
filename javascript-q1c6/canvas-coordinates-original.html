@@ -1,0 +1,61 @@
+<html>
+<head>
+
+<style type="text/css">
+
+body {padding: 5px; font-size:1em;font-family:verdana,helvetica,arial,sans-serif;}
+h1 {font-size:1.5em;}
+#coordinatesDiv {border-style: solid; border-width: 2px; border-color: #add8e6; border-radius: 50%; width: 90%; padding: 10px;}
+#clickDiv {border-style: solid; border-width: 2px; border-color: #add8e6; border-radius: 50%; width: 90%; padding: 10px;}
+
+</style>
+
+<script>
+
+//tracks the cursor as it travels over mapDiv and outputs the coordinates to coordinatesDiv:
+function mapCoordinates(e){
+x=e.clientX;
+y=e.clientY;
+document.getElementById("coordinatesDiv").innerHTML="Map cursor position: <br>X axis: " + x + "<br>Y axis: " + y;
+}
+
+//resets the innerHTML of coordinatesDiv to its original content after we move the mouse away from mapDiv:
+function clearMapCoordinates(){
+document.getElementById("coordinatesDiv").innerHTML="Mouse coordinates will appear here.";
+}
+
+//tracks click events in containerDiv (parent of mapDiv), and sends coordinates to clickDiv:
+function clickCoordinates(event) {
+    var x = event.clientX;
+    var y = event.clientY;
+    var coordinates = "Clicked position: <br>X axis: " + x + "<br>Y axis: " + y;
+    document.getElementById("clickDiv").innerHTML = coordinates;
+}
+
+//resets the innerHTML of clickDiv to its original content after we move the mouse away from containerDiv (parent of mapDiv):
+function clearClickCoordinates(){
+	document.getElementById("clickDiv").innerHTML="Click coordinates will appear here.";
+}
+
+</script>
+</head>
+<body>
+
+<!--ContainerDiv is the "container" for mapDiv. It's the same size, shape, and location as mapDiv, but it can be addressed independently.
+In this div, we send click events to clickCoordinates and mouseout events to clearClickCoordinates-->
+<div id="containerDiv" style="width:100%;" onclick="clickCoordinates(event)"onmouseout="clearClickCoordinates()">
+
+<h1>Instructions: move the mouse over the map, then click.</h1>
+
+<!--mapDiv is the same size/shape as WAMap.jpg and uses WAMap.jpg as its background.
+In this div, we send mousemove events to mapCoordinates and mouseout events to clearMapcoordinates-->
+<div id="mapDiv" style="float:left;width:571px;height:805px; background-image: url(WAMap.jpg); background-size: 566px 800px; background-repeat: no-repeat;" onmousemove="mapCoordinates(event)" onmouseout="clearMapCoordinates()"></div>
+
+<!--setting the initial contents of coordinatesDiv and clickDiv-->
+<div id="coordinatesDiv">Mouse coordinates will appear here.</div>
+<div id="clickDiv">Click coordinates will appear here.</div>
+</div>
+
+
+</body>
+</html>

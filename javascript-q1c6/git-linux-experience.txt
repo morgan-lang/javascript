@@ -1,0 +1,5 @@
+I learned Git Bash back when I got my HTML5/CSS cert in 2015, which is when I got my Linux System Administration cert. 
+I first started using Linux back in 2000 with Redhat 7, and went on to prefer Debian and Debian-derived distros like Ubuntu 
+until I learned CentOS 6.x and 7.x in 2015, which is what I run on my Digital Ocean droplet.
+
+All that said, I don't think I'm particularly talented at using *nix, and I would never call myself an expert. 
