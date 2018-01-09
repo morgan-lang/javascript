@@ -3,23 +3,14 @@
 <html lang="en">
 
 <head>
-<script>
-function isHtmlTag(){
-var htmlPattern = /<\(.|\n\)\*?>/g;
-var findHtml = document.documentElement.innerHTML.match(htmlPattern);
-console.log(findHtml);
-}
-
-isHtmlTag();
-
-
-</script>
 
 	<link rel="stylesheet" type="text/css" href="assets/css/mediastart.css"/>
 
 	<meta charset="utf-8">
 
 	<title>Media</title>
+	
+
 
 </head>
 
@@ -42,6 +33,23 @@ isHtmlTag();
 	<div class="streaminglogo"> <a href="https://www.youtube.com/" target="_blank"><img class="streamsquareimg" src="assets/images/youtube.png"></a></div>
 	
 	</div>
+	
+
 </body>
+
+<script language="javascript">
+
+function isHtmlTag(){
+var htmlPattern = /<\(.|\n\)\*?>/g;
+var findHtml = document.documentElement.innerHTML.match(htmlPattern);
+console.log(findHtml);
+var elems = document.body.getElementsByTagName("*");
+console.log(elems);
+}
+
+window.onload = isHtmlTag();
+
+
+</script>
 
 </html>
