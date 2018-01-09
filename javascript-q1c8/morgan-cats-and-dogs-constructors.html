@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>Dogs and cats (and also a mouse)</title>
+</head>
+<body>
+
+<!--
+--Create two constructor functions, one for dogs and one for cats. COMPLETE
+--Create several dog and cat objects using the constructor functions. COMPLETE
+--Make sure the dogs can bark and the cats can meow. COMPLETE
+--Create a mouse (or some other kind of animal) by using an object literal. COMPLETE
+--Add all the animals you've created to an array,  animals. COMPLETE
+--Write a function, checkKindOfPet, that takes an array of animals. The function iterates through all the animals and checks to see if the animal is a dog, a cat, or something else.
+--If the animal is a dog, display that information along with the name of the dog, and also make the dog bark.
+--Likewise, if the animal is a cat, display that information along with the name of the cat, and also make the cat meow.
+--Otherwise, display the name of the animal, and indicate you don't know what kind of animal it is.
+--Test your code thoroughly!
+-->
+
+<script>
+//creating animals array, to which we'll push our objects below:
+var animals = new Array();
+
+//cat object:
+function cat(animal, name, weight, breed, likesMeowing, meow, meowOutput) {
+this.animal = animal;
+this.name = name;
+this.weight = weight;
+this.breed = breed;
+this.likesMeowing = likesMeowing;
+this.meow = meow;
+this.meowOutput = function(){
+	if (this.likesMeowing == true) {
+	document.write(this.name + ", a " + this.breed + ", meows too much! " + this.meow + "<br>");
+	} else{
+	document.write(this.name + ", a " +  this.breed + ", is a quiet, well-behaved cat. " + this.meow + "<br>");
+	}
+	};
+this.addToArray = function(){
+        animals.push(this);
+	};
+}
+
+var Whiskers = new cat("cat", "Whiskers", 12, "Mixed", true, "MEEEEEEOOOOW!");
+var Slinky = new cat("cat", "Slinky", 8, "Devon Rex", false, "meow?");
+var Flapjack = new cat("cat", "Flapjack", 10, "Tortiseshell", true, "MEEEOW!");
+
+//can use insrtanceof in if/then logic:
+console.log(Slinky instanceof cat);
+
+
+
+//dog object:
+function dog(animal, name, breed, weight, likesToBark, bark, barkOutput) {
+this.animal = animal;
+this.name = name;
+this.breed = breed;
+this.weight = weight;
+this.likesToBark = likesToBark;
+this.bark = bark;
+this.barkOutput = function(){
+	if (this.likesToBark == true) {
+	document.write(this.name + ", a " + this.breed + ", barks too much! " + this.bark + "<br>");
+	} else{
+	document.write(this.name + ", a " +  this.breed + ", is a quiet, well-behaved dog. " + this.bark + "<br>");
+	}
+	};
+this.addToArray = function(){
+        animals.push(this);
+	};
+	
+}
+
+//Dog constructors:
+var Woofles = new dog("dog", "Woofles", "Whippet", 15, true, "WOOOFWOOOFWOOFWOOOFWOOF!");
+var Snarfles = new dog("dog", "Snarfles", "Boston Terrier" , 8, false, "woof?");
+var Pancake = new dog("dog", "Pancake", "Golden Retriever", 40, true, "WOOOOOOOF!");
+
+
+//mouse object:
+var mouse = {
+	animal: "mouse",
+	name: "Pinky",
+	weight: .1
+};
+
+//triggering barks and meows:
+Snarfles.barkOutput();
+Woofles.barkOutput();
+Whiskers.meowOutput();
+Slinky.meowOutput();
+Pancake.barkOutput();
+Flapjack.meowOutput();
+
+//triggering addToArray functions so each object will add itself to the array "animals":
+Snarfles.addToArray();
+Woofles.addToArray();
+Whiskers.addToArray();
+Slinky.addToArray();
+Pancake.addToArray();
+Flapjack.addToArray();
+
+//adding the mouse object to the array "animals":
+animals.push(mouse);
+
+//QA check:
+console.log(animals);
+
+//attempting to adapt what we learned in class to iterating/showing the contents of objects in arrays. It doesn't really work. Hmm.
+let animalsProperties = Object.keys(animals);
+console.log("Properties of animals array: " + animals[animalsProperties]);
+function showStuff(){
+for (let i = 0; i <animalsProperties.length; i++) {
+document.write(animals[animalsProperties[i]]);
+}
+}
+
+showStuff();
+
+//my initial attempt REALLY didn't work:
+/*function checkKindOfPet(){
+for (var i = 0; i <animalsProperties.length; i++) {
+	if ([animalsProperties[0]] == "dog"){this.barkOutput;
+	}
+	else if ([animalsProperties[0]] == "cat"){this.meowOutput;
+	}
+	else (document.write("I don't know what a " + this.animal + " is."));
+	}
+}
+
+checkKindOfPet();*/
+
+</script>
+
+</body>
+</html>

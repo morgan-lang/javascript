@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+<script>
+function isHtmlTag(){
+var htmlPattern = /<\(.|\n\)\*?>/g;
+var findHtml = document.documentElement.innerHTML.match(htmlPattern);
+console.log(findHtml);
+}
+
+isHtmlTag();
+
+
+</script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/mediastart.css"/>
+
+	<meta charset="utf-8">
+
+	<title>Media</title>
+
+</head>
+
+<body>
+
+	<div id="streamingtitle"><h1>Media</h1></div>
+	
+	<h2>Video</h2>
+
+	<div class="streamingcontainer">
+	
+    <div class="streaminglogo"> <a href="https://www.netflix.com/" target="_blank"><img class="streamsquareimg" src="assets/images/netflix.png"></a></div>
+
+    <div class="streaminglogo"> <a href="https://www.hulu.com/" target="_blank"><img class="streamsquareimg" src="assets/images/hulu.jpg"></a></div>
+
+    <div class="streaminglogo"> <a href="https://play.hbonow.com/" target="_blank"><img class="streamsquareimg" src="assets/images/hbogo.png"></a></div>
+	
+	<div class="streaminglogo"> <a href="https://www.amazon.com/Amazon-Video" target="_blank"><img class="streamsquareimg" src="assets/images/amazon.jpg"></a></div>
+	
+	<div class="streaminglogo"> <a href="https://www.youtube.com/" target="_blank"><img class="streamsquareimg" src="assets/images/youtube.png"></a></div>
+	
+	</div>
+</body>
+
+</html>
